@@ -1,0 +1,16 @@
+#filters {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.request {
+  display: flex;
+  gap: 10px;
+}
+
+.buttonFilter {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+}

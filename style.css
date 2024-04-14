@@ -1,0 +1,19 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.galleryList {
+  display:flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.emptyGallery {
+  width: 100%;
+  text-align: center;
+}
