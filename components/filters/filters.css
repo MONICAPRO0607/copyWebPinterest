@@ -14,3 +14,8 @@
   flex-direction: column;
   gap:5px;
 }
+
+.buttonFiltercontainer {
+  display: flex;
+  gap: 10px;
+}

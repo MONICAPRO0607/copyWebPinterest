@@ -2,7 +2,7 @@ import './card.css';
 
 const pinterCard = (width,src) => {
   return `
-  <li style='width:${width > 1000 ? width/100 : width/10}%;'>
+  <li class='card'>
   <img class='photo' src='${src}'>
   </li>`
 }

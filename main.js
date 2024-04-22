@@ -2,22 +2,27 @@ import { PinterCard } from './components/card/card'
 
 import { Filters } from './components/filters/filters'
 
+document.addEventListener('DOMContentLoaded', photos)
+
 const filtersGallery = document.getElementById('filters')
 filtersGallery.innerHTML = Filters(false)
+
 
 const searchApi =
   'https://api.unsplash.com/search/photos/?client_id=8-wfDOXOj_ZGvcxzqlkvG_bzwHCurt9SwtHVHfWKZ1Y'
 
 let searchParam = ''
 const inputFilter = document.getElementById('inputFilter')
-inputFilter.addEventListener('input', () => {
+
+const buttonFilter = document.getElementById('myButton')
+
+buttonFilter.addEventListener('click', () => {
   searchParam = inputFilter.value
   console.log(searchParam)
 
-  if (searchParam.length > 3) {
     search(searchParam)
   }
-})
+)
 
 const buttonsFilter = document.querySelectorAll('.buttonCall')
 
@@ -32,19 +37,36 @@ buttonsFilter.forEach((button) => {
 const api =
   'https://api.unsplash.com/photos/?client_id=8-wfDOXOj_ZGvcxzqlkvG_bzwHCurt9SwtHVHfWKZ1Y'
 
-fetch(`${api}`)
+function photos () {
+  fetch(`${api}`)
   .then((response) => response.json())
   .then((response) => {
-    const ulGallery = document.querySelector('.galleryList')
-    // console.log(response)
+    const ulGallery = document.querySelector('.galleryList') 
     response.forEach((element) => {
-      ulGallery.innerHTML += PinterCard(element.width, element.urls.full)
-      // console.log(element)
+      ulGallery.innerHTML += PinterCard(element.width, element.urls.regular)
     })
   })
   .catch((error) => {
     console.log(error)
   })
+}
+const apiRandom =
+  'https://api.unsplash.com/photos/random/?client_id=8-wfDOXOj_ZGvcxzqlkvG_bzwHCurt9SwtHVHfWKZ1Y&count=30'
+
+function random() {
+  fetch(`${apiRandom}`)
+  .then((response) => response.json())
+  .then((response) => {
+    const ulGallery = document.querySelector('.galleryList');
+    ulGallery.innerHTML = '';
+    response.forEach((element) => {
+      ulGallery.innerHTML += PinterCard(element.width, element.urls.regular)
+    })
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+}
 
 function search(searchParamValue) {
   fetch(`${searchApi}&query=${searchParamValue}`)
@@ -67,4 +89,13 @@ function search(searchParamValue) {
     .catch((error) => {
       console.log(error)
     })
-}
+
+  
+      };
+
+  const clickFilters = document.getElementById('clearFilters')
+
+  clickFilters.addEventListener('click', () => {
+    inputFilter.value = '';
+    random()
+      })

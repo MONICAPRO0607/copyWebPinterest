@@ -1,5 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+.myButton {
+ display: flex;
+ align-items: flex-end;
+
 }
 
 .galleryList {
@@ -7,6 +19,7 @@ body {
   flex-wrap: wrap;
   gap: 15px;
   list-style: none;
+  padding: 15px;
 }
 
 .hidden {
@@ -17,3 +30,4 @@ body {
   width: 100%;
   text-align: center;
 }
+
