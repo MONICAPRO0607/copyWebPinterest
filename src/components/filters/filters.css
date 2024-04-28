@@ -1,0 +1,54 @@
+#filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: rgb(15, 82, 15);
+}
+
+#inputFilter {
+  width: 500px;
+  height: 40px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.buttonFiltercontainer {
+  width: 900px;
+  height: 50px;
+  display: flex;
+  gap: 30px;
+}
+
+.buttonFilter {
+  height: 50px;
+  padding: 0 20px; 
+}
+
+@media (max-width: 880px) {
+  #filters {
+    flex-direction: column;
+  }
+
+  #inputFilter {
+    width: 100%;
+  }
+
+  .buttonFiltercontainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height: 200px;
+  }
+
+  #myButton {
+    width: 190px;
+  }
+
+  #clearFilters{
+    width: 190px;
+  }
+}

@@ -6,12 +6,13 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #fee762ea;
 }
 
 .myButton {
  display: flex;
- align-items: flex-end;
-
+ align-items: center;
+ 
 }
 
 .galleryList {
@@ -31,3 +32,11 @@ body {
   text-align: center;
 }
 
+logo {
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  padding-top: 100px;
+}

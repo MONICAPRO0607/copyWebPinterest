@@ -1,6 +1,9 @@
-import { PinterCard } from './components/card/card'
+import { Header } from "./src/components/Header/Header";
+import { PinterCard } from './src/components/card/card';
+import { Filters } from './src/components/filters/filters';
+import { Footer } from './src/components/Footer/Footer';
 
-import { Filters } from './components/filters/filters'
+Header();
 
 document.addEventListener('DOMContentLoaded', photos)
 
@@ -99,3 +102,5 @@ function search(searchParamValue) {
     inputFilter.value = '';
     random()
       })
+
+Footer ();

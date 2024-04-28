@@ -1,0 +1,23 @@
+#about {
+  margin: 160px 60px 0 60px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center; 
+  padding: 10px;
+}
+
+p {
+  margin: 60px;
+  text-align: justify;
+  padding: 10px;
+}
+
+@media (max-width: 880px) {
+  p {
+    font-size: 15px;
+  }
+  
+}
+
