@@ -61,15 +61,6 @@ export const Header = () => {
       // Agregamos la nueva sección al principio del cuerpo del documento
       document.body.prepend(section);
     });
-    //   event.preventDefault(); 
-      
-    //   const page = enlace.page(); 
-    //   const section = page; 
-
-    //   document.body.appendChild(section); 
-      
-    //   section.scrollIntoView({ behavior: "smooth" });
-    // });
 
     li.appendChild(a);
     ul.appendChild(li);
