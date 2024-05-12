@@ -10,13 +10,12 @@ body {
 }
 
 .myButton {
- display: flex;
- align-items: center;
- 
+  display: flex;
+  align-items: center;
 }
 
 .galleryList {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   gap: 15px;
   list-style: none;
@@ -37,15 +36,16 @@ logo {
   height: 100%;
 }
 
-#app {
-  padding-top: 100px;
-}
-
-@media (max-width: 880px) {
+@media (max-width: 989px) {
   .galleryList {
     /* width: 100%; */
     /* text-align: center;
     align-items: center; */
     margin: 0;
+    justify-content: center;
   }
+}
+
+.hide {
+  display: none !important;
 }

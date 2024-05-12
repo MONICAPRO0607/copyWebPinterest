@@ -1,74 +1,79 @@
-import { User } from "../pages/User/User.js";
-import { About } from "../pages/About/About.js";
-import { Contact } from "../pages/Contact/Contact.js";
-import "./Header.css";
+import './Header.css'
 
 const arrayEnlaces = [
   {
-    url: "#user",
-    texto: "Acceder",
-    page: User
-  }, 
+    url: '#user',
+    texto: 'Acceder',
+    page: 'user'
+  },
   {
-    url: "#about",
-    texto: "Sobre nosotros",
-    page: About
-  }, 
+    url: '#about',
+    texto: 'Sobre nosotros',
+    page: 'about'
+  },
   {
-    url: "#contact",
-    texto: "Contacto",
-    page: Contact
+    url: '#contact',
+    texto: 'Contacto',
+    page: 'contact'
   }
-];
+]
 
-const sections = {};
+export const header = () => {
+  const headerHTML = document.createElement('header')
+  headerHTML.id = 'header'
+  const headerContainer = document.createElement('div')
+  const logoLink = document.createElement('a')
+  const logo = document.createElement('img')
+  const nav = document.createElement('nav')
+  const ul = document.createElement('ul')
+
+  headerContainer.appendChild(logoLink)
+  headerContainer.appendChild(nav)
+  let currentSection = null
+
+  logo.src = '/assets/logo.png'
+  logo.id = 'logoHome'
+
+  logoLink.href = 'index.html'
+  logoLink.appendChild(logo)
+
+  arrayEnlaces.forEach((enlace) => {
+    const li = document.createElement('li')
+    const a = document.createElement('span')
+    a.classList.add('itemLink')
+
+    a.href = enlace.url
+    a.textContent = enlace.texto
+
+    a.addEventListener('click', (event) => {
+      event.preventDefault()
+
+      // Ocultar todos los componentes abiertos
+      arrayEnlaces.forEach((enlace) => {
+        const pageComponent = document.getElementById(enlace.page)
+        if (pageComponent && !pageComponent.classList.contains('hide')) {
+          pageComponent.classList.add('hide')
+        }
+      })
+
+      // Obtener el componente de la página correspondiente del objeto enlace
+      const pageComponent = document.getElementById(enlace.page)
+
+      // Si el componente existe, mostrarlo
+      if (pageComponent) {
+        pageComponent.classList.remove('hide')
+      }
+    })
+
+    li.appendChild(a)
+    ul.appendChild(li)
+  })
+
+  headerHTML.appendChild(headerContainer)
+  nav.appendChild(ul)
+  document.body.insertBefore(headerHTML, document.body.firstChild)
+}
 
 export const Header = () => {
-  const headerHTML = document.createElement("header");
-  const logoLink = document.createElement("a");
-  const logo = document.createElement("img");
-  const nav = document.createElement("nav");
-  const ul = document.createElement("ul");
-  let currentSection = null;
-
-  logo.src = "/assets/logo.png";
-  logo.id = "logoHome";
- 
-  logoLink.href = "index.html";
-  logoLink.appendChild(logo);
-
-  for (const enlace of arrayEnlaces) {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-
-    a.href = `#${enlace.texto.toLowerCase()}`;
-    a.textContent = enlace.texto;
-
-    a.addEventListener("click", (event) => {
-      event.preventDefault(); 
-      
-      const page = enlace.page(); 
-      const section = page; 
-
-      if (currentSection) {
-        // Si hay una sección actual, la eliminamos
-        currentSection.remove();
-      }
-
-      // Almacenamos la nueva sección como la sección actual
-      currentSection = section;
-
-      // Agregamos la nueva sección al principio del cuerpo del documento
-      document.body.prepend(section);
-    });
-
-    li.appendChild(a);
-    ul.appendChild(li);
-  }
-  
-  headerHTML.appendChild(logoLink)
-  headerHTML.appendChild(nav);
-  nav.appendChild(ul);
-  document.body.appendChild(headerHTML);
-
-};
+  return header()
+}

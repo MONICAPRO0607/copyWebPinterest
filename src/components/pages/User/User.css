@@ -1,12 +1,16 @@
 #user {
-  margin: 120px 20% -60px;
   font-size: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 10px;
-};
-
-@media (max-width: 880px) {
- #user{margin: 120px 15px -60px;} 
-};
+}
+#user .buttonsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: row;
+}
+#user .buttonsWrapper button {
+  width: calc(50% - 10px);
+}

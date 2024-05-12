@@ -1,13 +1,13 @@
-p {
+footer p {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: space-between;
   margin-bottom: 20px;
-  position:absolute;
+  position: absolute;
   width: 100%;
   height: 100px;
   color: black;
-  background-color: rgb(251, 251, 117); 
+  background-color: rgb(251, 251, 117);
   padding: 10px;
 }
