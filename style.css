@@ -40,3 +40,12 @@ logo {
 #app {
   padding-top: 100px;
 }
+
+@media (max-width: 880px) {
+  .galleryList {
+    /* width: 100%; */
+    /* text-align: center;
+    align-items: center; */
+    margin: 0;
+  }
+}

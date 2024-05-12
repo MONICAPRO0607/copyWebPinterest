@@ -8,6 +8,8 @@ export const About = () => {
   const title = document.createElement("h2");
   const paragraph = document.createElement("p");
 
+  paragraph.classList.add('aboutP');
+
   title.textContent = "Acerca de Nosotros";
   paragraph.textContent = "Bienvenido o bienvenida a nuestra empresa, donde las imágenes te darán lo que necesitas para que las ideas se convierten en realidad. Aquí siempre encontrarás creatividad, nosotros te proporcionamos el lienzo perfecto: una amplia variedad de imágenes que te inspirarán y despertarán la imaginación. Ya sea que estés creando un proyecto personal o buscando material para tu próximo proyecto profesional, estamos aquí para proveerte de la inspiración que necesitas. Desde paisajes impresionantes hasta retratos cautivadores, nuestra biblioteca de imágenes diversa y dinámica te ofrece infinitas posibilidades. ¡Estamos encantados de acompañarte en el viaje de la creatividad y juntos llevaremos tus ideas más allá de la imaginación! ";
   

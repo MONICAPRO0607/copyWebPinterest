@@ -1,5 +1,5 @@
 #about {
-  margin: 160px 60px 0 60px;
+  margin: 230px 60px -20px 60px;
   font-size: 20px;
   display: flex;
   flex-direction: column; 
@@ -8,16 +8,18 @@
   padding: 10px;
 }
 
-p {
-  margin: 60px;
+.aboutP {
   text-align: justify;
-  padding: 10px;
+  padding: 50px;
+  height: auto;
+  background-color: #fee762ea;
 }
 
 @media (max-width: 880px) {
-  p {
+  #about {
+    margin: 90% 60px 100px 60px;}
+  .aboutP {
     font-size: 15px;
   }
-  
 }
 
